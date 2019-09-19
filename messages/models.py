@@ -1,3 +1,5 @@
 from django.db import models
 
-# Create your models here.
+class Message(models.Model):
+	title = models.Charfield(max_length=50)
+	body = models.Charfield(max_length=150)
