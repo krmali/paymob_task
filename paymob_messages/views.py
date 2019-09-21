@@ -1,10 +1,3 @@
-# from django.shortcuts import render
-
-
-
-# from django.views.generic import View, UpdateView
-# from .forms import SignupForm
-
 from django.views.generic import View, UpdateView
 from rest_framework import viewsets, permissions
 from .models import Message
