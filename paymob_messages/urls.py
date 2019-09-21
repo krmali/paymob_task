@@ -8,7 +8,8 @@ router.register('messages', views.MessageView)
 
 urlpatterns = [
 	# path('', TemplateView.as_view(template_name='home.html'), name='home'),
-	path('',views.wall, name='wall'),
+	path('', views.wall, name='wall'),
+	path('new_msg/', views.new_msg, name='new_msg'),
 	path('', include('django.contrib.auth.urls')),
 	path('api/', include(router.urls))
 ]

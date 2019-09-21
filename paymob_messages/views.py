@@ -13,3 +13,7 @@ def wall(request):
 	context = {'messages_list': messages_list}
 	return render(request, 'wall.html', context)
 
+
+def new_msg(request):
+	return render(request, 'new_msg.html')
+
