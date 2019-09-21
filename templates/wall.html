@@ -1,7 +1,7 @@
 <!-- templates/home.html -->
 {% load messages_extras %}
 
-{% block title %}Home{% endblock %}
+{% block title %}<b>THE WALL</b>{% endblock %}
 
 {% block content %}
 {% if user.is_authenticated %}
@@ -11,14 +11,15 @@
 {% else %}
   <p>You are not logged in</p>
   <a href="{% url 'login' %}">login</a>
+  <a href="{% url 'signup' %}">signup</a>
 {% endif %}
 {% endblock %}
 <ul>
 	{% for m in messages_list %}
-	<li>{{m.title}} : {{m.body}}
+	<li><b>{{m.title}}</b> : {{m.body}}
 		{% pub_date_strftime m  as p_date %}
 		<p>created at: {{p_date}}</p>
-		<p>created by: {{m.author.email}}</p>
+		<p>created by: <b>{{m.author.email}}</b></p>
 	</li>
 	{% endfor %}
 </ul>
