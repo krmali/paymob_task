@@ -12,7 +12,7 @@ from .serializers import MessageSerializer
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
-from .forms import SignupForm
+from .forms import SignupForm, CreateNewMessageForm
 from django.contrib.sites.shortcuts import get_current_site
 from django.utils.encoding import force_bytes, force_text
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
@@ -33,9 +33,21 @@ def wall(request):
 	return render(request, 'wall.html', context)
 
 
-
 def new_msg(request):
-	return render(request, 'new_msg.html')
+    if request.method == 'POST':
+        form = CreateNewMessageForm(request.POST)
+        if form.is_valid():
+            msg = form.save(commit=False)
+            msg.author = request.user
+            msg.save()
+            return redirect('wall')
+    else:
+        form = CreateNewMessageForm()
+
+    return render(request, 'new_msg.html', {'form': form})
+
+
+	# return render(request, 'new_msg.html')
 
 
 def signup(request):
@@ -46,7 +58,7 @@ def signup(request):
             user.is_active = False
             user.save()
             current_site = get_current_site(request)
-            mail_subject = 'Activate your blog account.'
+            mail_subject = 'Activate your account.'
             message = render_to_string('acc_active_email.html', {
                 'user': user,
                 'domain': current_site.domain,
