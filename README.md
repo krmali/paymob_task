@@ -28,7 +28,7 @@
 
 
 ***Running Commands:***  
-	- *git clone <repo-url>*  
+	- *git clone https://github.com/KareemAliRahman/paymob_task.git*  
 	- *pip install pipenv*  
 	- *pipenv install*  
 	- *pipenv shell*  
