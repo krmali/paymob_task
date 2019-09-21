@@ -15,4 +15,4 @@ class Message(models.Model):
 
 
 	def __str__(self):
-		return self.title + ' : ' + self.body + ' (' + self.pub_date.strftime("%d/%m/%Y %H:%M:%S") + ')'
+		return self.title #+ ' : ' + self.body + ' (' + self.pub_date.strftime("%d/%m/%Y %H:%M:%S") + ')'

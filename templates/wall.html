@@ -1,5 +1,5 @@
 <!-- templates/home.html -->
-
+{% load messages_extras %}
 
 {% block title %}Home{% endblock %}
 
@@ -14,7 +14,11 @@
 {% endif %}
 {% endblock %}
 <ul>
-	{% for x in messages_list %}
-	<li>{{ x }}</li>
+	{% for m in messages_list %}
+	<li>{{m.title}} : {{m.body}}
+		{% pub_date_strftime m  as p_date %}
+		<p>created at: {{p_date}}</p>
+		<p>created by: {{m.author.email}}</p>
+	</li>
 	{% endfor %}
 </ul>
