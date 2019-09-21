@@ -11,8 +11,6 @@ class Message(models.Model):
 	In DJANGO Documentation, it is recommended to use a custom User model
 	but since the project is not intended to be scaled the given User model is used
 	""" 
-	author = models.ForeignKey(User, on_delete=models.CASCADE)
-
-
+	author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='messages')
 	def __str__(self):
-		return self.title #+ ' : ' + self.body + ' (' + self.pub_date.strftime("%d/%m/%Y %H:%M:%S") + ')'
+		return self.title

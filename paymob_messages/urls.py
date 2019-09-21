@@ -5,6 +5,7 @@ from django.views.generic.base import TemplateView
 
 router = routers.DefaultRouter()
 router.register('messages', views.MessageView)
+router.register('users', views.UserView)
 
 urlpatterns = [
 	# path('', TemplateView.as_view(template_name='home.html'), name='home'),

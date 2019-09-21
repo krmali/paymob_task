@@ -1,7 +1,7 @@
 from django.views.generic import View, UpdateView
 from rest_framework import viewsets, permissions
 from .models import Message
-from .serializers import MessageSerializer
+from .serializers import MessageSerializer, UserSerializer
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
@@ -19,6 +19,11 @@ class MessageView(viewsets.ModelViewSet):
 	queryset = Message.objects.all()
 	serializer_class = MessageSerializer
 	permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
+
+class UserView(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
 
 def wall(request):
 	messages_list = Message.objects.order_by('-pub_date')
