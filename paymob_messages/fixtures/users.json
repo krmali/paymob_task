@@ -1,0 +1,74 @@
+[
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$150000$PcEtfrE2U7po$dJiThKblcJnukS3j4jwaJC9qe0SpqV6btWt5pkNtHjY=",
+        "last_login": "2019-09-22T00:20:49.421Z",
+        "is_superuser": true,
+        "username": "kareem",
+        "first_name": "",
+        "last_name": "",
+        "email": "kareem@paymob.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2019-09-21T16:31:58.196Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$150000$tDJnIvsfkUhG$PnbP8N9QLYQFmseBGPO3WvkIfCwz/yD+oHU8wFVDyig=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "hasan",
+        "first_name": "",
+        "last_name": "",
+        "email": "hasan@gmail.com",
+        "is_staff": false,
+        "is_active": false,
+        "date_joined": "2019-09-21T20:42:53.306Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$150000$m96jt4x2Fxn1$frWjIZotAUJm7gVobMX+dhdu1lmZY4F2P7nujc6VVSA=",
+        "last_login": "2019-09-21T20:44:45.173Z",
+        "is_superuser": false,
+        "username": "nada",
+        "first_name": "",
+        "last_name": "",
+        "email": "nada@yahoo.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2019-09-21T20:44:18.555Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$150000$hX2Y978Yl57p$dgp6hGnECUOkgBVEw6xnRFw17v+a7t7jNgvdyM0JBh4=",
+        "last_login": "2019-09-21T20:47:07.215Z",
+        "is_superuser": false,
+        "username": "omar",
+        "first_name": "",
+        "last_name": "",
+        "email": "omar@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2019-09-21T20:46:50.684Z",
+        "groups": [],
+        "user_permissions": []
+    }
+}
+]

@@ -1,0 +1,102 @@
+[
+{
+    "model": "paymob_messages.message",
+    "pk": 1,
+    "fields": {
+        "title": "hello people",
+        "body": "I am kareem, this is my first message",
+        "pub_date": "2019-09-21T16:33:20.380Z",
+        "author": 1
+    }
+},
+{
+    "model": "paymob_messages.message",
+    "pk": 2,
+    "fields": {
+        "title": "second hello people",
+        "body": "I am kareem, this is my second message",
+        "pub_date": "2019-09-21T16:33:28.439Z",
+        "author": 1
+    }
+},
+{
+    "model": "paymob_messages.message",
+    "pk": 3,
+    "fields": {
+        "title": "Hallo, wie geht's?",
+        "body": "Ich heisse Kareem. Ich spreche kann ein bisschen Deutsch sprechen.",
+        "pub_date": "2019-01-21T16:33:35.708Z",
+        "author": 1
+    }
+},
+{
+    "model": "paymob_messages.message",
+    "pk": 4,
+    "fields": {
+        "title": "moin",
+        "body": "Mein name ist hasan.",
+        "pub_date": "2019-03-21T21:35:40.754Z",
+        "author": 2
+    }
+},
+{
+    "model": "paymob_messages.message",
+    "pk": 5,
+    "fields": {
+        "title": "hi",
+        "body": "je m'appelle Nada.",
+        "pub_date": "2019-05-21T21:36:17.917Z",
+        "author": 3
+    }
+},
+{
+    "model": "paymob_messages.message",
+    "pk": 6,
+    "fields": {
+        "title": "saba7 el5er",
+        "body": "ana hasan. ana batkalem 3araby kaman kwayes.",
+        "pub_date": "2019-09-21T19:54:45.553Z",
+        "author": 2
+    }
+},
+{
+    "model": "paymob_messages.message",
+    "pk": 7,
+    "fields": {
+        "title": "ana omar 1",
+        "body": "Omar ana 1",
+        "pub_date": "2019-04-20T22:10:45.553Z",
+        "author": 4
+    }
+},
+{
+    "model": "paymob_messages.message",
+    "pk": 8,
+    "fields": {
+        "title": "ana omar 2",
+        "body": "Omar ana 2",
+        "pub_date": "2019-08-21T22:54:45.553Z",
+        "author": 4
+    }
+},
+{
+    "model": "paymob_messages.message",
+    "pk": 9,
+    "fields": {
+        "title": "ana omar 3",
+        "body": "Omar ana 3",
+        "pub_date": "2018-08-21T22:33:45.553Z",
+        "author": 4
+    }
+},
+{
+    "model": "paymob_messages.message",
+    "pk": 10,
+    "fields": {
+        "title": "ana omar 4",
+        "body": "Omar ana 4",
+        "pub_date": "2019-02-20T22:54:45.553Z",
+        "author": 4
+    }
+}
+]
