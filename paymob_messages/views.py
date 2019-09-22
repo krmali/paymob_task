@@ -1,7 +1,8 @@
-from django.views.generic import View, UpdateView
-from rest_framework import viewsets, permissions
 from .models import Message
+from django.contrib.auth.models import User
+from rest_framework import viewsets, permissions
 from .serializers import MessageSerializer, UserSerializer
+from django.views.generic import View, UpdateView
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
@@ -11,19 +12,20 @@ from django.utils.encoding import force_bytes, force_text
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.template.loader import render_to_string
 from .tokens import account_activation_token
-from django.contrib.auth.models import User
 from django.core.mail import EmailMessage
 
 
 class MessageView(viewsets.ModelViewSet):
 	queryset = Message.objects.all()
 	serializer_class = MessageSerializer
+    # guests can read messages
 	permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
 
 class UserView(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
+    # guests cannot read user data
+    permission_classes = (permissions.IsAuthenticated,)
 
 def wall(request):
 	messages_list = Message.objects.order_by('-pub_date')
@@ -32,20 +34,18 @@ def wall(request):
 
 
 def new_msg(request):
-    if request.method == 'POST':
+    if request.method == 'POST' and request.user.is_authenticated:
         form = CreateNewMessageForm(request.POST)
         if form.is_valid():
             msg = form.save(commit=False)
             msg.author = request.user
             msg.save()
             return redirect('wall')
+    elif request.method == 'GET' and request.user.is_authenticated:
+            form = CreateNewMessageForm()
     else:
-        form = CreateNewMessageForm()
-
+        return HttpResponse('Your not signed in')
     return render(request, 'new_msg.html', {'form': form})
-
-
-	# return render(request, 'new_msg.html')
 
 
 def signup(request):
